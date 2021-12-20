@@ -7,6 +7,7 @@ use App\Http\Controllers\LawyerController;
 use App\Http\Controllers\JudgeController;
 use App\Http\Controllers\RoleAssign;
 use App\Http\Controllers\CasesCoutroller;
+use App\Http\Controllers\PlaintiffController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,23 +52,37 @@ Route::group(['middleware' => ['auth','role:Admin']], function ()
     Route::resource('lawyers', LawyerController::class);
     Route::resource('assignrole', RoleAssign::class);
     Route::resource('kesi', CasesCoutroller::class);
+
+    
 });
+
 
 Route::group(['middleware' => ['auth','role:Lawyer']], function () 
 {
-    Route::get('/kesi', [CasesCoutroller::class, 'index'])->name('kesi.index');
-    Route::get('/kesi/{kesi}', [CasesCoutroller::class, 'show'])->name('kesi.show');
-});  
+   
+    Route::resource('kesi', CasesCoutroller::class);
+    Route::resource('plaintiffs', PlaintiffController::class);
+
+    
+});
+
 
 Route::group(['middleware' => ['auth','role:Judge']], function () 
 {
-    Route::get('/kesi', [CasesCoutroller::class, 'index'])->name('kesi.index');
-    Route::get('/kesi/{kesi}', [CasesCoutroller::class, 'show'])->name('kesi.show');
-    Route::get('/kesi/{kesi}/edit', [CasesCoutroller::class, 'edit'])->name('kesi.edit');
-    Route::PUT('/kesi/{kesi}', [CasesCoutroller::class, 'update'])->name('kesi.update');
-}); 
+   
+    Route::resource('kesi', CasesCoutroller::class);
 
+    
+});
 
+Route::group(['middleware' => ['auth','role:Plaintiff']], function () 
+{
+   
+    Route::resource('kesi', CasesCoutroller::class);
+    Route::resource('plaintiffs', PlaintiffController::class);
+
+    
+});
 
 
 

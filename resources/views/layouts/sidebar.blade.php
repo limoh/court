@@ -13,10 +13,26 @@
             </svg>
             <span class="ml-2 text-sm font-semibold">Case Files</span>
         </a>
+
+        <a href="{{ route('plaintiffs.index') }}" class="flex items-center text-gray-600 py-2 hover:text-blue-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            <span class="ml-2 text-sm font-semibold">Clients</span>
+        </a>
         @endrole
 
         @role('Judge')
         <a href="{{ route('kesi.index') }}" class="flex items-center text-gray-600 py-2 hover:text-blue-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z" />
+            </svg>
+            <span class="ml-2 text-sm font-semibold">Case Files</span>
+        </a>
+        @endrole
+
+        @role('Plaintiff')
+        <a href="{{ route('plaintiffs.index') }}" class="flex items-center text-gray-600 py-2 hover:text-blue-700">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z" />
             </svg>

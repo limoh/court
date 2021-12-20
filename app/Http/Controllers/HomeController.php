@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Judge;
 use App\Models\Lawyer;
+use App\Models\Kesi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -33,20 +34,30 @@ class HomeController extends Controller
         
         if ($user->hasRole('Admin')) {
 
+            $kesis = Kesi::latest()->get();
             $judges = Judge::latest()->get();
             $lawyers = Lawyer::latest()->get();
 
-            return view('home', compact('judges','lawyers'));
+            return view('home', compact('judges','lawyers', 'kesis'));
 
         } elseif ($user->hasRole('Judge')) {
+            $kesis = Kesi::latest()->get();
 
-            return view('home');
+            return view('home', compact('kesis'));
 
         } elseif ($user->hasRole('Lawyer')) {
             
-            
+            $kesis = Kesi::latest()->get();
 
-            return view('home');
+            return view('home', compact('kesis'));
+
+        } elseif ($user->hasRole('Plaintiff')) {
+            
+            $kesis = Kesi::latest()->get();
+            $judges = Judge::latest()->get();
+            $lawyers = Lawyer::latest()->get();
+
+            return view('home', compact('kesis', 'judges', 'lawyers'));
 
         } else {
             return 'NO ROLE ASSIGNED YET!';

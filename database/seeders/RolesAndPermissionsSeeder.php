@@ -24,7 +24,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $role = Role::create(['name' => 'Admin']);
         $role = Role::create(['name' => 'Lawyer']);
         $role = Role::create(['name' => 'Judge']);
-        //$role = Role::create(['name' => 'Plaintiff']);
+        $role = Role::create(['name' => 'Plaintiff']);
 
         // $role->givePermissionTo('edit articles');
     }
