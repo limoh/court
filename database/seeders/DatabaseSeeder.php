@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+
         $this->call(RolesAndPermissionsSeeder::class);
 
         $user = User::create([
@@ -91,7 +91,6 @@ class DatabaseSeeder extends Seeder
                 'created_at'        => date("Y-m-d H:i:s")
             ]
         ]);
-
      
     }
 }

@@ -27,6 +27,9 @@
         @include('dashboard.judge')
     @endrole
 
+    @role('Plaintiff')
+        @include('dashboard.plaintiff')
+    @endrole
     
 
 </div>

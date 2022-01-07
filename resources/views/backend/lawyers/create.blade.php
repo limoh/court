@@ -5,7 +5,7 @@
 
         <div class="flex items-center justify-between mb-6">
             <div>
-                <h2 class="text-gray-700 uppercase font-bold">Create Lawyer</h2>
+                <h2 class="text-gray-700 uppercase font-bold">Create Judge</h2>
             </div>
             <div class="flex flex-wrap items-center">
                 <a href="{{ route('lawyers.index') }}" class="bg-gray-200 text-gray-700 text-sm uppercase py-2 px-4 flex items-center rounded">
@@ -137,7 +137,7 @@
                     <div class="md:w-1/3"></div>
                     <div class="md:w-2/3">
                         <button class="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
-                            Create Lawyer
+                            Create Judge
                         </button>
                     </div>
                 </div>
