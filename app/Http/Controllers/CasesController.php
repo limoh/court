@@ -11,17 +11,17 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
-class CasesCoutroller extends Controller
+class CasesController extends Controller
 {
 
-   
+   /*
     public function __construct() {
           $this->middleware('auth:web');
           $this->middleware('role:Admin');
           $this->middleware('role:Judge|Lawyer|Plaintiff')->only('index', 'edit', 'create', 'update', 'show');
     }
-    
-    
+    */
+
     /**
      * Display a listing of the resource.
      *

@@ -6,10 +6,19 @@
             <div>
                 <h2 class="text-gray-700 uppercase font-bold">Cases</h2>
             </div>
+
+            <div class="flex flex-wrap items-center">
+                <a href="{{ url('download') }}" class="bg-green-200 text-white-700 text-sm uppercase py-2 px-4 flex items-center rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                    <span class="ml-2 text-xs font-semibold">Report</span>
+                </a>
+            </div>
+
             <div class="flex flex-wrap items-center">
                 <a href="{{ route('kesi.create') }}" class="bg-gray-200 text-gray-700 text-sm uppercase py-2 px-4 flex items-center rounded">
                     <svg class="w-3 h-3 fill-current" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" class="svg-inline--fa fa-plus fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
-                    <span class="ml-2 text-xs font-semibold">Cases</span>
+                    <span class="ml-2 text-xs font-semibold">Add Case</span>
                 </a>
             </div>
         </div>
