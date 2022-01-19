@@ -10,6 +10,7 @@ use App\Http\Controllers\RoleAssign;
 use App\Http\Controllers\CasesController;
 use App\Http\Controllers\PlaintiffController;
 use App\Exports\CaseExport;
+use App\Http\Controllers\SMSController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,29 +54,14 @@ Route::group(['middleware' => ['auth','role:Admin']], function ()
     Route::resource('judge', JudgeController::class);
     Route::resource('lawyers', LawyerController::class);
     Route::resource('assignrole', RoleAssign::class);
-/*
-    Route::get('kesi', [CasesController::class, 'index'])->name('kesi.index');
-    Route::get('kesi/{kesi}/edit', [CasesController::class, 'edit'])->name('kesi.edit');
-    Route::put('kesi', [CasesController::class, 'update'])->name('kesi.update');
-    Route::delete('kesi/{kesi}', [CasesController::class, 'destroy'])->name('kesi.destroy');
-    Route::get('kesi/{kesi}', [CasesController::class, 'show'])->name('kesi.show');
-    Route::get('kesi/create', [CasesController::class, 'create'])->name('kesi.create');
-    Route::post('kesi', [CasesController::class, 'store'])->name('kesi.store');
-*/
+
+    Route::any('send-sms', [SMSController::class, 'send'])->name('send-sms');
     
 });
 
 
 Route::group(['middleware' => ['auth','role:Lawyer']], function () 
 {
-    /*
-    Route::get('kesi', [CasesController::class, 'index'])->name('kesi.index');
-    Route::get('kesi/create', [CasesController::class, 'create'])->name('kesi.create');
-    Route::post('kesi', [CasesController::class, 'store'])->name('kesi.store');
-    Route::get('kesi/{kesi}', [CasesController::class, 'show'])->name('kesi.show');
-    Route::get('kesi/{kesi}/edit', [CasesController::class, 'edit'])->name('kesi.edit');
-    Route::put('kesi', [CasesController::class, 'update'])->name('kesi.update');
-*/
     Route::resource('plaintiffs', PlaintiffController::class);
 
     
@@ -84,25 +70,11 @@ Route::group(['middleware' => ['auth','role:Lawyer']], function ()
 
 Route::group(['middleware' => ['auth','role:Judge']], function () 
 {
-    /*
-    Route::get('kesi', [CasesController::class, 'index'])->name('kesi.index');
-    Route::get('kesi/{kesi}/edit', [CasesController::class, 'edit'])->name('kesi.edit');
-    Route::put('kesi', [CasesController::class, 'update'])->name('kesi.update');
-
-*/
     
 });
 
 Route::group(['middleware' => ['auth','role:Admin|Judge|Lawyer|Plaintiff']], function () 
 {
-    /*
-    Route::get('kesi', [CasesController::class, 'index'])->name('kesi.index');
-    Route::get('kesi/create', [CasesController::class, 'create'])->name('kesi.create');
-    Route::post('kesi', [CasesController::class, 'store'])->name('kesi.store');
-    Route::get('kesi/{kesi}', [CasesController::class, 'show'])->name('kesi.show');
-    Route::get('kesi/{kesi}/edit', [CasesController::class, 'edit'])->name('kesi.edit');
-    Route::put('kesi', [CasesController::class, 'update'])->name('kesi.update');
-*/
     Route::resource('kesi', CasesController::class);
   
 
