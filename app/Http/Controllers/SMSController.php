@@ -33,7 +33,7 @@ class SMSController extends Controller
             // close connection
             curl_close($ch);
             //Sending message ends here
-            return[$result];
+            
         }
 
             return view('backend.page.sms');
