@@ -60,4 +60,36 @@
         
     </div>
 
+    <div class="roles-permissions">
+        <div class="flex items-center justify-between mb-6">
+            <div>
+                <h2 class="text-gray-700 uppercase font-bold">Cases</h2>
+            </div>
+        </div>
+        <div class="mt-8 bg-white rounded border-b-4 border-gray-300">
+            <div class="flex flex-wrap items-center uppercase text-sm font-semibold bg-gray-300 text-gray-600 rounded-tl rounded-tr">
+                <div class="w-2/12 px-4 py-3">Case Title</div>
+                <div class="w-3/12 px-4 py-3">Case Description</div>
+                <div class="w-2/12 px-4 py-3">Plaintiff Names</div>
+                <div class="w-2/12 px-4 py-3">Next Hearing</div>
+                <div class="w-2/12 px-4 py-3">Plaintiff Phone Number</div>
+            </div>
+            @foreach ($kesis as $kesi)
+                <div class="flex flex-wrap items-center text-gray-700 border-t-2 border-l-4 border-r-4 border-gray-300">
+                    <div class="w-2/12 px-4 py-3 text-sm font-semibold text-gray-600 tracking-tight">{{ $kesi->title }}</div>
+                    <div class="w-3/12 px-4 py-3 text-sm font-semibold text-gray-600 tracking-tight">{{ $kesi->description }}</div>
+                    <div class="w-2/12 px-4 py-3 text-sm font-semibold text-gray-600 tracking-tight">{{ $kesi->p_name}}</div>
+                    <div class="w-2/12 px-4 py-3 text-sm font-semibold text-gray-600 tracking-tight">{{ $kesi->next_hearing }}</div>
+                    <div class="w-2/12 px-4 py-3 text-sm font-semibold text-gray-600 tracking-tight">{{ $kesi->p_phone }}</div>
+                    
+                </div>
+            @endforeach
+        </div>
+        <div class="mt-8">
+            {{ $kesis->links() }}
+        </div>
+
+        @include('backend.modals.delete',['name' => 'kesi'])
+    </div>
+
 @endsection

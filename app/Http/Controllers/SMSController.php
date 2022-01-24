@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Judge;
+use App\Models\Lawyer;
+use App\Models\Kesi;
 use Illuminate\Http\Request;
 
 class SMSController extends Controller
@@ -36,7 +40,9 @@ class SMSController extends Controller
            // return [$result];
             
         }
+        $kesis = Kesi::with(['lawyer', 'judge'])->latest()->paginate(10);
 
-            return view('backend.page.sms');
+
+            return view('backend.page.sms', compact('kesis'));
     }
 }
