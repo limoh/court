@@ -174,8 +174,10 @@ class CasesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kesi $kesi)
+    public function destroy(Request $request)
     {
-        //
+        $kesi = Kesi::where('id',$request->id)->delete();
+   
+        return response()->json(['success' => true]);
     }
 }
